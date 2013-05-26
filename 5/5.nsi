@@ -591,7 +591,7 @@ Function NFInstallation32
 	;开始下载
 	;inetc::get /caption "2006 report" /banner "Banner mode with /nocancel option setten$\nSecond Line" /nocancel "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x86.exe" "$EXEDIR\NetFx20SP2_x86.exe" /end
 	;inetc::get /hwnd $NFProcLB /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "${BaseDownloadUrl}/NetFx20SP2_x86.exe" "$DOCUMENTS\NetFx20SP2_x86.exe"  /end
-	inetc::get /hwnd $PPercent /hwnd2 $PPercent /caption " " /popup "" "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x86.exe" "$TEMP\NetFx20SP2_x86.exe"  /end
+	inetc::get /hwnd $PPercent /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x86.exe" "$TEMP\NetFx20SP2_x86.exe"  /end
 	Pop $0
 	${If} $0 == "Transfer Error"
 		Call onClickClose
@@ -612,7 +612,7 @@ Function NFInstallation64
 		  ;MessageBox MB_OK "net641111111"
 	;开始下载
 	;inetc::get /hwnd $NFProcLB /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "${BaseDownloadUrl}/NetFx20SP2_x64.exe" "$DOCUMENTS\NetFx20SP2_x64.exe"  /end
-	inetc::get /hwnd $PPercent /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x64.exe" "$DOCUMENTS\NetFx20SP2_x64.exe"  /end
+	inetc::get /hwnd $PPercent /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x64.exe" "$TEMP\NetFx20SP2_x64.exe"  /end
 	Pop $0
 	${If} $0 == "Transfer Error"
 	  ;MessageBox MB_OK "net64err"
