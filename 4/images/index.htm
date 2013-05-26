@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+ <script>function stop(){ return false; }document.oncontextmenu=stop; </script>
+</head>
+
+<body  style='border:none;width:680px;height:296px;overflow:hidden;margin:0px;' oncopy="document.selection.empty()" oncut="return false" onselect="document.selection.empty()" ondragstart="return false" onselectstart="return false">
+
+<SCRIPT>
+document.body.oncontextmenu=function(oEvent){
+           if(document.all){
+                oEvent=window.event;
+                oEvent.returnValue=false;
+           }else{
+               oEvent.preventDefault();
+           }
+        }
+
+	var NowFrame = 1;
+	var MaxFrame = 4;
+	var bStart = 0;
+	function fnToggle() {
+	var next = NowFrame + 1;
+	if(next == MaxFrame+1) 
+	{
+	NowFrame = MaxFrame;
+	next = 1;
+	}
+	if(bStart == 0)
+	{
+	bStart = 1;
+			  
+	setTimeout('fnToggle()', 4000);
+	return;
+	}
+	else
+	{
+	oTransContainer.filters[0].Apply();
+	document.images['oDIV'+next].style.display = "";
+	document.images['oDIV'+NowFrame].style.display = "none"; 
+	oTransContainer.filters[0].Play(duration=3);
+	if(NowFrame == MaxFrame) 
+	NowFrame = 1;
+	else
+	NowFrame++;
+	} setTimeout('fnToggle()', 4000);
+	}
+	fnToggle();
+//window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty(); 
+
+</SCRIPT>
+<!--焦点图片开始-->
+<DIV id=oTransContainer style="FILTER: progid:DXImageTransform.Microsoft.Wipe(GradientSize=1.0, wipeStyle=0, motion='forward'); WIDTH: 680px; HEIGHT:296px">
+ <IMG id=oDIV1  style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: yes;  BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=200 src="loading_pic1.bmp" width=518 border=0/> 
+ <IMG id=oDIV2 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: none; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=200 src="loading_pic2.bmp" width=518 border=0/> 
+ <IMG id=oDIV3 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: none; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=200 src="loading_pic3.bmp" width=518 border=0/> 
+<IMG id=oDIV3 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: none; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=200 src="loading_pic4.bmp" width=518 border=0/> 
+</DIV>
+<!--焦点图片结束-->
+ 
+</body>
+</html>
