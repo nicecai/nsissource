@@ -30,14 +30,14 @@ Var Txt_Browser
 Var Btn_Browser
 
 Var Btn_DetailsPrint
-Var UDetailsPrint   ;ÏêÏ¸ÊäÈëÎÄ×Ö
-Var Txt_DetailsPrint  ;ÏêÏ¸ÎÄ×Ö¿ò¿Ø¼ş
-Var Bool_DetailsPrint ;¼ÇÂ¼ÊÇ·ñÏÔÊ¾ÏêÏ¸ĞÅÏ¢ÎÄ±¾¿ò
+Var UDetailsPrint   ;è¯¦ç»†è¾“å…¥æ–‡å­—
+Var Txt_DetailsPrint  ;è¯¦ç»†æ–‡å­—æ¡†æ§ä»¶
+Var Bool_DetailsPrint ;è®°å½•æ˜¯å¦æ˜¾ç¤ºè¯¦ç»†ä¿¡æ¯æ–‡æœ¬æ¡†
 
 Var Lbl_Sumary
 Var PB_ProgressBar
 
-Var WebImg ;ÍøÒ³¿Ø¼ş
+Var WebImg ;ç½‘é¡µæ§ä»¶
 
 Var Ck_Weibo
 Var Bool_Weibo
@@ -52,29 +52,29 @@ Var ISNETF
 
 
 
-;---------------------------È«¾Ö±àÒë½Å±¾Ô¤¶¨ÒåµÄ³£Á¿-----------------------------------------------------
+;---------------------------å…¨å±€ç¼–è¯‘è„šæœ¬é¢„å®šä¹‰çš„å¸¸é‡-----------------------------------------------------
 !define  EM_BrandingText "testtest"
-; MUI Ô¤¶¨Òå³£Á¿
+; MUI é¢„å®šä¹‰å¸¸é‡
 !define MUI_ABORTWARNING
-;°²×°Í¼±êµÄÂ·¾¶Ãû×Ö
+;å®‰è£…å›¾æ ‡çš„è·¯å¾„åå­—
 !define MUI_ICON "images\fav.ico"
-;Ğ¶ÔØÍ¼±êµÄÂ·¾¶Ãû×Ö
+;å¸è½½å›¾æ ‡çš„è·¯å¾„åå­—
 !define MUI_UNICON "images\fav.ico"
-;²úÆ·Ğ­ÒéÊéµÄÂ·¾¶Ãû×Ö
+;äº§å“åè®®ä¹¦çš„è·¯å¾„åå­—
 ;!define MUI_PAGE_LICENSE_RTY "license\license.rtf"
 !define OUTFILE_NAME "test.exe"
 
 !addplugindir "Plugins"
 
-;---------------------------ÉèÖÃÈí¼şÑ¹ËõÀàĞÍ£¨Ò²¿ÉÒÔÍ¨¹ıÍâÃæ±àÒë½Å±¾¿ØÖÆ£©------------------------------------
+;---------------------------è®¾ç½®è½¯ä»¶å‹ç¼©ç±»å‹ï¼ˆä¹Ÿå¯ä»¥é€šè¿‡å¤–é¢ç¼–è¯‘è„šæœ¬æ§åˆ¶ï¼‰------------------------------------
 SetCompressor lzma
-BrandingText "ÀÃ²Ë×÷Æ·"
+BrandingText "çƒ‚èœä½œå“"
 SetCompress force
 XPStyle on
-; ------ MUI ÏÖ´ú½çÃæ¶¨Òå (1.67 °æ±¾ÒÔÉÏ¼æÈİ) ------
+; ------ MUI ç°ä»£ç•Œé¢å®šä¹‰ (1.67 ç‰ˆæœ¬ä»¥ä¸Šå…¼å®¹) ------
 !include "MUI2.nsh"
 !include "WinCore.nsh"
-;ÒıÓÃÎÄ¼şº¯ÊıÍ·ÎÄ¼ş
+;å¼•ç”¨æ–‡ä»¶å‡½æ•°å¤´æ–‡ä»¶
 !include "FileFunc.nsh"
 !include "nsWindows.nsh"
 !include "LoadRTF.nsh"
@@ -83,30 +83,30 @@ XPStyle on
 
 !define MUI_CUSTOMFUNCTION_GUIINIT onGUIInit
 
-;×Ô¶¨ÒåÒ³Ãæ
+;è‡ªå®šä¹‰é¡µé¢
 Page custom WelcomePage
 Page custom InstallationPage
 Page custom LoadingPage
 Page custom CompletePage
 
-; Ğí¿ÉĞ­ÒéÒ³Ãæ
+; è®¸å¯åè®®é¡µé¢
 !define MUI_LICENSEPAGE_CHECKBOX
 
-; °²×°Ä¿Â¼Ñ¡ÔñÒ³Ãæ
+; å®‰è£…ç›®å½•é€‰æ‹©é¡µé¢
 !insertmacro MUI_PAGE_DIRECTORY
-; °²×°¹ı³ÌÒ³Ãæ
+; å®‰è£…è¿‡ç¨‹é¡µé¢
 !insertmacro MUI_PAGE_INSTFILES
-; °²×°Íê³ÉÒ³Ãæ
+; å®‰è£…å®Œæˆé¡µé¢
 !insertmacro MUI_PAGE_FINISH
-; °²×°Ğ¶ÔØ¹ı³ÌÒ³Ãæ
+; å®‰è£…å¸è½½è¿‡ç¨‹é¡µé¢
 !insertmacro MUI_UNPAGE_INSTFILES
-; °²×°½çÃæ°üº¬µÄÓïÑÔÉèÖÃ
+; å®‰è£…ç•Œé¢åŒ…å«çš„è¯­è¨€è®¾ç½®
 !insertmacro MUI_LANGUAGE "SimpChinese"
 
-;------------------------------------------------------MUI ÏÖ´ú½çÃæ¶¨ÒåÒÔ¼°º¯Êı½áÊø------------------------
-;Ó¦ÓÃ³ÌĞòÏÔÊ¾Ãû×Ö
+;------------------------------------------------------MUI ç°ä»£ç•Œé¢å®šä¹‰ä»¥åŠå‡½æ•°ç»“æŸ------------------------
+;åº”ç”¨ç¨‹åºæ˜¾ç¤ºåå­—
 Name "test"
-;Ó¦ÓÃ³ÌĞòÊä³öÂ·¾¶
+;åº”ç”¨ç¨‹åºè¾“å‡ºè·¯å¾„
 OutFile "${OUTFILE_NAME}"
 InstallDir "$PROGRAMFILES\test"
 
@@ -157,9 +157,9 @@ Function .onInit
 FunctionEnd
 
 Function onGUIInit
-    ;Ïû³ı±ß¿ò
+    ;æ¶ˆé™¤è¾¹æ¡†
     System::Call `user32::SetWindowLong(i$HWNDPARENT,i${GWL_STYLE},0x9480084C)i.R0`
-    ;Òş²ØÒ»Ğ©¼ÈÓĞ¿Ø¼ş
+    ;éšè—ä¸€äº›æ—¢æœ‰æ§ä»¶
     GetDlgItem $0 $HWNDPARENT 1034
     ShowWindow $0 ${SW_HIDE}
     GetDlgItem $0 $HWNDPARENT 1035
@@ -178,7 +178,7 @@ Function onGUIInit
     ShowWindow $0 ${SW_HIDE}
 FunctionEnd
 
-;´¦ÀíÎŞ±ß¿òÒÆ¶¯
+;å¤„ç†æ— è¾¹æ¡†ç§»åŠ¨
 Function onGUICallback
   ${If} $MSG = ${WM_LBUTTONDOWN}
     SendMessage $HWNDPARENT ${WM_NCLBUTTONDOWN} ${HTCAPTION} $0
@@ -191,7 +191,7 @@ Function onWarningGUICallback
   ${EndIf}
 FunctionEnd
 
-;Ğ­Òé°´Å¥ÊÂ¼ş
+;åè®®æŒ‰é’®äº‹ä»¶
 Function onClickAgreement
 	${IF} $Bool_License == 1
 		ShowWindow $Txt_License ${SW_HIDE}
@@ -208,7 +208,7 @@ Function onClickAgreement
 	${EndIf}
 FunctionEnd
 
-;-----------------------------------------Æ¤·ôÌùÍ¼·½·¨----------------------------------------------------
+;-----------------------------------------çš®è‚¤è´´å›¾æ–¹æ³•----------------------------------------------------
 Function SkinBtn_Next
   SkinBtn::Set /IMGID=$PLUGINSDIR\btn_next.bmp $1
 FunctionEnd
@@ -301,7 +301,7 @@ Function OnClick_CheckFinishPage
 	${EndIf}
 FunctionEnd
 
-;µã»÷ÓÒÉÏ½Ç¹Ø±Õ°´Å¥
+;ç‚¹å‡»å³ä¸Šè§’å…³é—­æŒ‰é’®
 Function onClickClose
     FindProcDLL::FindProc "test.exe"
     Sleep 500
@@ -311,7 +311,7 @@ Function onClickClose
     ${EndIf}
 FunctionEnd
 
-;´¦ÀíÒ³ÃæÌø×ªµÄÃüÁî
+;å¤„ç†é¡µé¢è·³è½¬çš„å‘½ä»¤
 Function RelGotoPage
   IntCmp $R9 0 0 Move Move
     StrCmp $R9 "X" 0 Move
@@ -320,14 +320,14 @@ Function RelGotoPage
   SendMessage $HWNDPARENT "0x408" "$R9" ""
 FunctionEnd
 
-;ÏÂÒ»²½°´Å¥ÊÂ¼ş
+;ä¸‹ä¸€æ­¥æŒ‰é’®äº‹ä»¶
 Function onClickNext
   StrCpy $R9 1 ;Goto the next page
   Call RelGotoPage
   Abort
 FunctionEnd
 
-;µã»÷°²×°°´Å¥
+;ç‚¹å‡»å®‰è£…æŒ‰é’®
 Function OnClick_Install
 		EnableWindow $Btn_Install 0
 
@@ -336,14 +336,14 @@ Function OnClick_Install
 	  ShowWindow $PPercent ${SW_SHOW}
 
     ShowWindow $PB_ProgressBar ${SW_SHOW}
-		;¼ì²é°²×°»·¾³
+		;æ£€æŸ¥å®‰è£…ç¯å¢ƒ
 		;Call CheckEnvironments
 	
 		${If} $ISMSI == 1
 		  MessageBox MB_OK "msi"
 	  	Call MSIInstallation32
 		${EndIf}
-		;ÅĞ¶ÏÊÇ·ñÒÑ¾­×°ÁËNF
+		;åˆ¤æ–­æ˜¯å¦å·²ç»è£…äº†NF
 	${If} $ISNETF == 1
 		ReadRegStr $1 HKLM "Hardware\Description\System\CentralProcessor\0" Identifier
 		StrCpy $2 $1 3
@@ -358,7 +358,7 @@ Function OnClick_Install
 	${EndIf}
 	
 	Call InstallationMainFun
-		;Ìø×ªµ½×îºóÒ»Ò³
+		;è·³è½¬åˆ°æœ€åä¸€é¡µ
 		Call onClickNext
 FunctionEnd
 
@@ -371,27 +371,27 @@ FunctionEnd
 
 Function CheckEnvironments
 	Call DiskCheck
-	;¼ì²âWindows Installer°æ±¾ÊÇ·ñ´óÓÚ3.1
+	;æ£€æµ‹Windows Installerç‰ˆæœ¬æ˜¯å¦å¤§äº3.1
 	Call MSIEnvironmentCheck
-	;¼ì²â.net framework 2.0 sp2ÊÇ·ñ°²×°
+	;æ£€æµ‹.net framework 2.0 sp2æ˜¯å¦å®‰è£…
 	Call NFEnvironmentCheck
-	;¼ì²âVC 2008»·¾³
+	;æ£€æµ‹VC 2008ç¯å¢ƒ
 	;Call VCEnvironmentCheck
 FunctionEnd
 
 
 Function InstallationMainFun
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚÏÂÔØÖ÷³ÌĞò..."
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨ä¸‹è½½ä¸»ç¨‹åº..."
 	${NSD_SetText} $PPercent "0%"
 
 	inetc::get /hwnd $PPercent /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "http://downloads.sourceforge.net/sevenzip/7z920_extra.7z" "$TEMP\7z920_extra.7z" /end
 	Pop $0
 	${If} $0 == "Transfer Error"
-		MessageBox MB_ICONINFORMATION|MB_OK "ÏÂÔØ³ö´í"
+		MessageBox MB_ICONINFORMATION|MB_OK "ä¸‹è½½å‡ºé”™"
 		Call onClickClose
 		Abort
 	${ELSEIF} $0 == "SendRequest Error"
-		MessageBox MB_ICONINFORMATION|MB_OK "ÏÂÔØ³ö´í"
+		MessageBox MB_ICONINFORMATION|MB_OK "ä¸‹è½½å‡ºé”™"
 		Call onClickClose
 		Abort
 	${ELSE}
@@ -401,7 +401,7 @@ Function InstallationMainFun
 FunctionEnd
 
 Function MAINInstall32
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚ°²×°Ö÷³ÌĞò..."
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨å®‰è£…ä¸»ç¨‹åº..."
 	ShowWindow $PPercent ${SW_HIDE}
 	SetOutPath $INSTDIR
 	SetOverwrite on
@@ -411,9 +411,9 @@ FunctionEnd
 
 Function DiskCheck
     ;**********************************************************************************************
-    ;ÓÃÓÚ¼ì²é°²×°Ö®Ç°µÄ¼ì²â
-		;ÅĞ¶ÏÏµÍ³ÀàĞÍ£¬Win7+µÄÖ»ÒªÅĞ¶ÏÊÇ·ñ×°ÁË.net 2.0 sp2¼´¿É
-		;WinXP£¬Win2000£¬Win2003£¬Vista¶¼ĞèÒª×°.net 2.0 sp2£¬ÆäÖĞVista sp1×°µÄÊÇ.net 2.0 sp1ËùÒÔ²»Âú×ã¡£
+    ;ç”¨äºæ£€æŸ¥å®‰è£…ä¹‹å‰çš„æ£€æµ‹
+		;åˆ¤æ–­ç³»ç»Ÿç±»å‹ï¼ŒWin7+çš„åªè¦åˆ¤æ–­æ˜¯å¦è£…äº†.net 2.0 sp2å³å¯
+		;WinXPï¼ŒWin2000ï¼ŒWin2003ï¼ŒVistaéƒ½éœ€è¦è£….net 2.0 sp2ï¼Œå…¶ä¸­Vista sp1è£…çš„æ˜¯.net 2.0 sp1æ‰€ä»¥ä¸æ»¡è¶³ã€‚
 		;**********************************************************************************************
 		ReadRegStr $0 HKLM 'SOFTWARE\Microsoft\Windows\CurrentVersion' CurrentVersion
 		${If} $0 != ''
@@ -427,7 +427,7 @@ Function DiskCheck
 
 		${If} $0 == '6.2'	;Win8
 		${OrIf} $0 == '6.1'	;Win7
-			  ;ÅĞ¶ÏÊÇ·ñ×°ÁË.net framework 2.0 sp2
+			  ;åˆ¤æ–­æ˜¯å¦è£…äº†.net framework 2.0 sp2
 			  ${If} $1 == 1
 			  ${AndIf} $2 == 2
 						;Abort
@@ -438,7 +438,7 @@ Function DiskCheck
 		${OrIf} $0 == '5.2'  ;Win2003
 		${OrIf} $0 == '5.1'  ;WinXP
 		${OrIf} $0 == '5.0'  ;Win2000
-			;ÅĞ¶ÏÊÇ·ñ×°ÁË.net framework 2.0 sp2
+			;åˆ¤æ–­æ˜¯å¦è£…äº†.net framework 2.0 sp2
 			${If} $1 == 1
 			${AndIf} $2 == 2
 				;Call DiskSpaceCheck
@@ -448,7 +448,7 @@ Function DiskCheck
 			${EndIf}
 		${EndIf}
 
-		;¼ì²é±¾Éí³ÌĞòµÄ¿Õ¼ä´óĞ¡
+		;æ£€æŸ¥æœ¬èº«ç¨‹åºçš„ç©ºé—´å¤§å°
 		Call DiskProgramSpaceCheck
 FunctionEnd
 
@@ -459,28 +459,28 @@ Function DiskFrameWorkSpaceCheck
     StrCpy $9 $8 3
     ${If} $9 == 'x86'
         ${If} $R0 < 280
-			MessageBox MB_ICONINFORMATION|MB_OK ".net framework°²×°¿Õ¼ä²»¹»"
+			MessageBox MB_ICONINFORMATION|MB_OK ".net frameworkå®‰è£…ç©ºé—´ä¸å¤Ÿ"
 			Abort
 		${EndIf}
 	${Else}
 		${If} $R0 < 610
-			MessageBox MB_ICONINFORMATION|MB_OK ".net framework°²×°¿Õ¼ä²»¹»"
+			MessageBox MB_ICONINFORMATION|MB_OK ".net frameworkå®‰è£…ç©ºé—´ä¸å¤Ÿ"
 			Abort
 		${EndIf}
 	${EndIf}
 FunctionEnd
 
-;Ö÷³ÌĞòĞ¡ÓÚ50mbÅĞ¶Ï
+;ä¸»ç¨‹åºå°äº50mbåˆ¤æ–­
 Function DiskProgramSpaceCheck
 	StrCpy $2 $INSTDIR 3
     ${DriveSpace}  "$2" "/D=F /S=M" $R0
 	${If} $R0 < 10
-		MessageBox MB_ICONINFORMATION|MB_OK "Ö÷³ÌĞò°²×°¿Õ¼ä²»¹»"
+		MessageBox MB_ICONINFORMATION|MB_OK "ä¸»ç¨‹åºå®‰è£…ç©ºé—´ä¸å¤Ÿ"
 		Abort
 	${EndIf}
 FunctionEnd
 
-;MSI»·¾³¼ì²â
+;MSIç¯å¢ƒæ£€æµ‹
 Function MSIEnvironmentCheck
 	ReadRegStr $0 HKLM 'SOFTWARE\Microsoft\Windows NT\CurrentVersion' CurrentVersion
 	${If} $0 == '5.2'  ;Win2003
@@ -488,8 +488,8 @@ Function MSIEnvironmentCheck
 	${OrIf} $0 == '5.0'  ;Win2000
 		GetDllVersion "$SYSDIR\msi.dll" $R0 $R1
 		IntOp $R2 $R0 >> 16
-		IntOp $R2 $R2 & 0x0000FFFF ; $R2 Ö÷°æ±¾
-		IntOp $R3 $R0 & 0x0000FFFF ; $R3 ´Î°æ±¾
+		IntOp $R2 $R2 & 0x0000FFFF ; $R2 ä¸»ç‰ˆæœ¬
+		IntOp $R3 $R0 & 0x0000FFFF ; $R3 æ¬¡ç‰ˆæœ¬
 		IntOp $R4 $R1 >> 16
 		IntOp $R4 $R4 & 0x0000FFFF ; $R4
 		IntOp $R5 $R1 & 0x0000FFFF ; $R5
@@ -501,39 +501,39 @@ Function MSIEnvironmentCheck
 	${EndIf}
 FunctionEnd
 
-;ÏÂÔØMSI
+;ä¸‹è½½MSI
 Function MSIInstallation32
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚÏÂÔØMicrosoft Installer 3.1"
-	ShowWindow $PPercent ${SW_SHOW} ;ÏÔÊ¾ÕıÔÚÏÂÔØ
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨ä¸‹è½½Microsoft Installer 3.1"
+	ShowWindow $PPercent ${SW_SHOW} ;æ˜¾ç¤ºæ­£åœ¨ä¸‹è½½
 	${NSD_SetText} $PPercent "0%"
 
 	;inetc::get /hwnd $MSIProcLB /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "${BaseDownloadUrl}/WindowsInstaller-KB893803-v2-x86.exe" "$DOCUMENTS\WindowsInstaller-KB893803-v2-x86.exe"  /end
 	inetc::get /hwnd $PPercent /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "http://download.microsoft.com/download/1/4/7/147ded26-931c-4daf-9095-ec7baf996f46/WindowsInstaller-KB893803-v2-x86.exe" "$TEMP\WindowsInstaller-KB893803-v2-x86.exe"  /end
 	Pop $0
 	${If} $0 == "Transfer Error"
-		MessageBox MB_ICONINFORMATION|MB_OK "ÏÂÔØ³ö´í"
+		MessageBox MB_ICONINFORMATION|MB_OK "ä¸‹è½½å‡ºé”™"
 		Call onClickClose
 		Abort
 	${ELSEIF} $0 == "SendRequest Error"
-		MessageBox MB_ICONINFORMATION|MB_OK "ÏÂÔØ³ö´í"
+		MessageBox MB_ICONINFORMATION|MB_OK "ä¸‹è½½å‡ºé”™"
 		Call onClickClose
 		Abort
 	${ELSE}
-		;Ë¢ĞÂ½çÃæ
+		;åˆ·æ–°ç•Œé¢
 		System::Call "user32::InvalidateRect(i $hwndparent,i0,i 1)"
 		Call MSIInstall32
 	${EndIf}
 FunctionEnd
 
-;°²×°MSI
+;å®‰è£…MSI
 Function MSIInstall32
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚ°²×°Microsoft Installer 3.1"
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨å®‰è£…Microsoft Installer 3.1"
 	ShowWindow $PPercent ${SW_HIDE}
 	nsExec::ExecToStack '"$TEMP\WindowsInstaller-KB893803-v2-x86.exe" /quiet /norestart /overwriteoem"'
 	Delete "$TEMP\WindowsInstaller-KB893803-v2-x86.exe"
 FunctionEnd
 
-;FrameworkÆ½Ì¨¼ì²â
+;Frameworkå¹³å°æ£€æµ‹
 Function NFEnvironmentCheck
 	ReadRegStr $1 HKLM "Hardware\Description\System\CentralProcessor\0" Identifier
 	StrCpy $2 $1 3
@@ -551,7 +551,7 @@ Function NFEnvironmentCheck
 
 	${If} $7 == '6.2'	;Win8
 	${OrIf} $7 == '6.1'	;Win7
-		;ÅĞ¶ÏÊÇ·ñ×°ÁË.net framework 2.0 sp2
+		;åˆ¤æ–­æ˜¯å¦è£…äº†.net framework 2.0 sp2
 		${If} $8 == 1
 		${AndIf} $9 == 2
 
@@ -569,7 +569,7 @@ Function NFEnvironmentCheck
 	${OrIf} $7 == '5.2'  ;Win2003
 	${OrIf} $7 == '5.1'  ;WinXP
 	${OrIf} $7 == '5.0'  ;Win2000
-		;ÅĞ¶ÏÊÇ·ñ×°ÁË.net framework 2.0 sp2
+		;åˆ¤æ–­æ˜¯å¦è£…äº†.net framework 2.0 sp2
 		${If} $8 == 1
 		${AndIf} $9 == 2
 
@@ -584,11 +584,11 @@ Function NFEnvironmentCheck
 FunctionEnd
 
 Function NFInstallation32
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚÏÂÔØ.net framework 2.0 sp2"
-	ShowWindow $PPercent ${SW_SHOW} ;ÏÔÊ¾ÕıÔÚÏÂÔØ
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨ä¸‹è½½.net framework 2.0 sp2"
+	ShowWindow $PPercent ${SW_SHOW} ;æ˜¾ç¤ºæ­£åœ¨ä¸‹è½½
 	${NSD_SetText} $PPercent "0%"
 
-	;¿ªÊ¼ÏÂÔØ
+	;å¼€å§‹ä¸‹è½½
 	;inetc::get /caption "2006 report" /banner "Banner mode with /nocancel option setten$\nSecond Line" /nocancel "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x86.exe" "$EXEDIR\NetFx20SP2_x86.exe" /end
 	;inetc::get /hwnd $NFProcLB /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "${BaseDownloadUrl}/NetFx20SP2_x86.exe" "$DOCUMENTS\NetFx20SP2_x86.exe"  /end
 	inetc::get /hwnd $PPercent /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x86.exe" "$TEMP\NetFx20SP2_x86.exe"  /end
@@ -606,11 +606,11 @@ Function NFInstallation32
 FunctionEnd
 
 Function NFInstallation64
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚÏÂÔØ.net framework 2.0 sp2"
-	ShowWindow $PPercent ${SW_SHOW} ;ÏÔÊ¾ÕıÔÚÏÂÔØ
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨ä¸‹è½½.net framework 2.0 sp2"
+	ShowWindow $PPercent ${SW_SHOW} ;æ˜¾ç¤ºæ­£åœ¨ä¸‹è½½
 	${NSD_SetText} $PPercent "0%"
 		  ;MessageBox MB_OK "net641111111"
-	;¿ªÊ¼ÏÂÔØ
+	;å¼€å§‹ä¸‹è½½
 	;inetc::get /hwnd $NFProcLB /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "${BaseDownloadUrl}/NetFx20SP2_x64.exe" "$DOCUMENTS\NetFx20SP2_x64.exe"  /end
 	inetc::get /hwnd $PPercent /hwnd2 $PPercent /probar $PB_ProgressBar /caption " " /popup "" "http://download.microsoft.com/download/c/6/e/c6e88215-0178-4c6c-b5f3-158ff77b1f38/NetFx20SP2_x64.exe" "$TEMP\NetFx20SP2_x64.exe"  /end
 	Pop $0
@@ -629,7 +629,7 @@ Function NFInstallation64
 FunctionEnd
 
 Function NFInstall64
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚ°²×°.net framework 2.0 sp2"
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨å®‰è£….net framework 2.0 sp2"
 	;MessageBox MB_OK "net64inst"
 	ShowWindow $PPercent ${SW_HIDE}
 	;ShowWindow
@@ -649,7 +649,7 @@ Function NFInstall64
 	Delete "$TEMP\NetFx20SP2_x64.exe"
 FunctionEnd
 Function NFInstall32
-	${NSD_SetText} $Lbl_Sumary "ÕıÔÚ°²×°.net framework 2.0 sp2"
+	${NSD_SetText} $Lbl_Sumary "æ­£åœ¨å®‰è£….net framework 2.0 sp2"
 	ShowWindow $PPercent ${SW_HIDE}
 	nsExec::ExecToStack '"$TEMP\NetFx20SP2_x86.exe" /q /c:"install.exe /noaspupgrade /q"'
 	Pop $0
@@ -696,14 +696,14 @@ Function onCancel
   	Pop $BGImage
   ${NSW_SetImage} $BGImage $PLUGINSDIR\quit.bmp $ImageHandle
 	GetFunctionAddress $0 onWarningGUICallback
-	WndProc::onCallback $BGImage $0 ;´¦ÀíÎŞ±ß¿ò´°ÌåÒÆ¶¯
+	WndProc::onCallback $BGImage $0 ;å¤„ç†æ— è¾¹æ¡†çª—ä½“ç§»åŠ¨
   ${NSW_CenterWindow} $WarningForm $hwndparent
 	${NSW_Show}
 	Create_End:
   ShowWindow $WarningForm ${SW_SHOW}
 FunctionEnd
 
-;¸ü¸ÄÄ¿Â¼ÊÂ¼ş
+;æ›´æ”¹ç›®å½•äº‹ä»¶
 Function OnChange_DirRequest
 	;Pop $0
 	;System::Call "user32::GetWindowText($Txt_Browser,t.r0,i${NSIS_MAX_STRLEN})"
@@ -722,7 +722,7 @@ Function OnClick_BrowseButton
   Call GetLastPart
   Pop $R1 ; last part "ProgramName"
 
-  nsDialogs::SelectFolderDialog "ÇëÑ¡Ôñ $R0 °²×°µÄÎÄ¼ş¼Ğ:" "$R0"
+  nsDialogs::SelectFolderDialog "è¯·é€‰æ‹© $R0 å®‰è£…çš„æ–‡ä»¶å¤¹:" "$R0"
   Pop $0
   ${If} $0 == "error" # returns 'error' if 'cancel' was pressed?
     Return
@@ -736,7 +736,7 @@ FunctionEnd
 ; Push "C:\Program Files\Directory\Whatever"
 ; Call GetParent
 ; Pop $R0 ; $R0 equal "C:\Program Files\Directory"
-;µÃµ½Ñ¡ÖĞÄ¿Â¼ÓÃÓÚÆ´½Ó°²×°³ÌĞòÃû³Æ
+;å¾—åˆ°é€‰ä¸­ç›®å½•ç”¨äºæ‹¼æ¥å®‰è£…ç¨‹åºåç§°
 Function GetParent
   Exch $R0 ; input string
   Push $R1
@@ -763,7 +763,7 @@ FunctionEnd
 ; Push "\" ; input chop char
 ; Call GetLastPart
 ; Pop $R1 ; last part "ProgramName"
-;½ØÈ¡Ñ¡ÖĞÄ¿Â¼
+;æˆªå–é€‰ä¸­ç›®å½•
 Function GetLastPart
   Exch $0 ; chop char
   Exch
@@ -789,7 +789,7 @@ Function GetLastPart
     Exch $0 ; output string
 FunctionEnd
 
-;ÏêÏ¸°²×°ÊÂ¼ş
+;è¯¦ç»†å®‰è£…äº‹ä»¶
 Function onClickDetailsPrint
     ${IF} $Bool_DetailsPrint == 1
         ShowWindow $WebImg ${SW_SHOW}
@@ -809,7 +809,7 @@ FunctionEnd
 Function NSD_TimerFun
     GetFunctionAddress $0 NSD_TimerFun
     nsDialogs::KillTimer $0
-    !if 1   ;ÊÇ·ñÔÚºóÌ¨ÔËĞĞ,1ÓĞĞ§
+    !if 1   ;æ˜¯å¦åœ¨åå°è¿è¡Œ,1æœ‰æ•ˆ
         GetFunctionAddress $0 CheckEnvironments
         BgWorker::CallAndWait
     !else
@@ -829,23 +829,23 @@ Function OnClick_CheckWeibo
     ${EndIf}
 FunctionEnd
 
-;µã»÷×îºóÍê³É
+;ç‚¹å‡»æœ€åå®Œæˆ
 Function onClickComplete
 
-    ;ÅĞ¶ÏÊÇ·ñÌí¼Ó×ÀÃæ¿ì½İ·½Ê½
+    ;åˆ¤æ–­æ˜¯å¦æ·»åŠ æ¡Œé¢å¿«æ·æ–¹å¼
     ${If} $Bool_ShortCut == 1
       ;CreateShortCut "$DESKTOP\${PRODUCT_NAME}.lnk" "$INSTDIR\test.exe"
     ${EndIf}
-    ;ÅĞ¶ÏÊÇ·ñ¿ª»úÔËĞĞ³ÌĞò
+    ;åˆ¤æ–­æ˜¯å¦å¼€æœºè¿è¡Œç¨‹åº
     ${If} $Bool_AutoRun == 1
       ;CreateShortCut "$QUICKLAUNCH\${PRODUCT_NAME}.lnk" "$INSTDIR\${PRODUCT_EXECUTE_NAME}"
       ;CreateShortCut "$SMSTARTUP\${PRODUCT_NAME}.lnk" "$INSTDIR\${PRODUCT_EXECUTE_NAME}"
     ${EndIf}
-    ;ÅĞ¶ÏÊÇ·ñ´ò¿ªÍøÕ¾
+    ;åˆ¤æ–­æ˜¯å¦æ‰“å¼€ç½‘ç«™
     ${If} $Bool_FinishPage == 1
         ExecShell open "http://hamletsoft.com"
     ${EndIf}
-    ;ÅĞ¶ÏÊÇ·ñÁ¢¼´ÔËĞĞ³ÌĞò
+    ;åˆ¤æ–­æ˜¯å¦ç«‹å³è¿è¡Œç¨‹åº
     ${If} $Bool_Weibo == 1
       ExecShell open "http://weibo.com/pylife"
       ShowWindow $HWNDPARENT ${SW_HIDE}
@@ -870,12 +870,12 @@ Function WelcomePage
     ${If} $0 == error
         Abort
     ${EndIf}
-    SetCtlColors $0 ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+    SetCtlColors $0 ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
-    ${NSW_SetWindowSize} $HWNDPARENT 513 354 ;¸Ä±ä´°Ìå´óĞ¡
-    ${NSW_SetWindowSize} $0 513 354 ;¸Ä±äPage´óĞ¡
+    ${NSW_SetWindowSize} $HWNDPARENT 513 354 ;æ”¹å˜çª—ä½“å¤§å°
+    ${NSW_SetWindowSize} $0 513 354 ;æ”¹å˜Pageå¤§å°
 
-    ;¶ÁÈ¡RTFµÄÎÄ±¾¿ò
+    ;è¯»å–RTFçš„æ–‡æœ¬æ¡†
 		nsDialogs::CreateControl "RichEdit20A" \
     ${ES_READONLY}|${WS_VISIBLE}|${WS_CHILD}|${WS_TABSTOP}|${WS_VSCROLL}|${ES_MULTILINE}|${ES_WANTRETURN} \
 		${WS_EX_STATICEDGE}  5 35 501 216 ''
@@ -884,7 +884,7 @@ Function WelcomePage
     ShowWindow $Txt_License ${SW_HIDE}
 
 
-    ;ÏÂÒ»²½
+    ;ä¸‹ä¸€æ­¥
     ${NSD_CreateButton} 320 315 88 25 ""
 		Pop $Btn_Next
 		StrCpy $1 $Btn_Next
@@ -892,7 +892,7 @@ Function WelcomePage
 		GetFunctionAddress $3 onClickNext
     SkinBtn::onClick $1 $3
 
-    	;È¡Ïû
+    	;å–æ¶ˆ
 	${NSD_CreateButton} 417 315 88 25 ""
 	Pop $Btn_Cancel
 	StrCpy $1 $Btn_Cancel
@@ -900,7 +900,7 @@ Function WelcomePage
 	GetFunctionAddress $3 onCancel
   SkinBtn::onClick $1 $3
 
-    ;¹Ø±Õ°´Å¥
+    ;å…³é—­æŒ‰é’®
   ${NSD_CreateButton} 490 8 15 15 ""
 	Pop $Btn_Close
 	StrCpy $1 $Btn_Close
@@ -908,28 +908,28 @@ Function WelcomePage
   GetFunctionAddress $3 onCancel
   SkinBtn::onClick $1 $3
 
-    ;ÓÃ»§Ğ­Òé
+    ;ç”¨æˆ·åè®®
 		${NSD_CreateButton} 181 273 95 15 ""
 		Pop $Btn_Agreement
 		StrCpy $1 $Btn_Agreement
 		Call SkinBtn_Agreement1
 	  GetFunctionAddress $3 onClickAgreement
 	  SkinBtn::onClick $1 $3
- 		StrCpy $Bool_License 0 ;³õÊ¼»¯ÖµÎª0
+ 		StrCpy $Bool_License 0 ;åˆå§‹åŒ–å€¼ä¸º0
 
-    ;ÌùĞ¡Í¼
+    ;è´´å°å›¾
     ${NSD_CreateBitmap} 1 31 511 226 ""
     Pop $MiddleImage
     ${NSD_SetImage} $MiddleImage $PLUGINSDIR\welcome.bmp $ImageHandle
     ;ShowWindow $MiddleImage ${SW_HIDE}
 
-    ;Ìù±³¾°´óÍ¼
+    ;è´´èƒŒæ™¯å¤§å›¾
     ${NSD_CreateBitmap} 0 0 100% 100% ""
     Pop $BGImage
     ${NSD_SetImage} $BGImage $PLUGINSDIR\bg.bmp $ImageHandle
 
 	GetFunctionAddress $0 onGUICallback
-	WndProc::onCallback $BGImage $0 ;´¦ÀíÎŞ±ß¿ò´°ÌåÒÆ¶¯
+	WndProc::onCallback $BGImage $0 ;å¤„ç†æ— è¾¹æ¡†çª—ä½“ç§»åŠ¨
 	nsDialogs::Show
 	${NSD_FreeImage} $ImageHandle
 FunctionEnd
@@ -947,12 +947,12 @@ Function InstallationPage
 	${If} $0 == error
 		Abort
 	${EndIf}
-	SetCtlColors $0 ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+	SetCtlColors $0 ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
-	${NSW_SetWindowSize} $HWNDPARENT 520 350 ;¸Ä±ä×Ô¶¨Òå´°Ìå´óĞ¡
-	${NSW_SetWindowSize} $0 520 350 ;¸Ä±ä×Ô¶¨ÒåPage´óĞ¡
+	${NSW_SetWindowSize} $HWNDPARENT 520 350 ;æ”¹å˜è‡ªå®šä¹‰çª—ä½“å¤§å°
+	${NSW_SetWindowSize} $0 520 350 ;æ”¹å˜è‡ªå®šä¹‰Pageå¤§å°
 
-	;¸ü¸ÄÄ¿Â¼¿Ø¼ş´´½¨
+	;æ›´æ”¹ç›®å½•æ§ä»¶åˆ›å»º
 	${NSD_CreateDirRequest} 26 79 358 25 "$INSTDIR"
  	Pop	$Txt_Browser
  	${NSD_OnChange} $Txt_Browser OnChange_DirRequest
@@ -964,7 +964,7 @@ Function InstallationPage
 	GetFunctionAddress $3 OnClick_BrowseButton
   SkinBtn::onClick $1 $3
 
-	;CheckBoxÑ¡ÖĞÏî
+	;CheckBoxé€‰ä¸­é¡¹
 	${NSD_CreateButton} 26 150 15 15 ""
 	Pop $Ck_ShortCut
 	StrCpy $1 $Ck_ShortCut
@@ -972,9 +972,9 @@ Function InstallationPage
 	GetFunctionAddress $3 OnClick_CheckShortCut
     SkinBtn::onClick $1 $3
 	StrCpy $Bool_ShortCut 1
-    ${NSD_CreateLabel} 45 151 100 15 "Ìí¼Ó×ÀÃæ¿ì½İ·½Ê½"
+    ${NSD_CreateLabel} 45 151 100 15 "æ·»åŠ æ¡Œé¢å¿«æ·æ–¹å¼"
     Pop $Lbl_ShortCut
-    SetCtlColors $Lbl_ShortCut ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+    SetCtlColors $Lbl_ShortCut ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
     ${NSD_CreateButton} 26 180 15 15 ""
 	Pop $Ck_AutoRun
@@ -983,9 +983,9 @@ Function InstallationPage
 	GetFunctionAddress $3 OnClick_CheckAutoRun
     SkinBtn::onClick $1 $3
 	StrCpy $Bool_AutoRun 1
-    ${NSD_CreateLabel} 45 181 175 15 "¿ª»ú×Ô¶¯ÔËĞĞ³ÌĞò"
+    ${NSD_CreateLabel} 45 181 175 15 "å¼€æœºè‡ªåŠ¨è¿è¡Œç¨‹åº"
     Pop $Lbl_AutoRun
-    SetCtlColors $Lbl_AutoRun ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+    SetCtlColors $Lbl_AutoRun ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
   ${NSD_CreateButton} 26 210 15 15 ""
 	Pop $Ck_FinishPage
@@ -994,11 +994,11 @@ Function InstallationPage
 	GetFunctionAddress $3 OnClick_CheckFinishPage
   SkinBtn::onClick $1 $3
 	StrCpy $Bool_FinishPage 1
-  ${NSD_CreateLabel} 45 211 300 15 "°²×°Íê±Ïºó´ò¿ªÀÃ²ËµÄÍøÕ¾http://www.pylife.net"
+  ${NSD_CreateLabel} 45 211 300 15 "å®‰è£…å®Œæ¯•åæ‰“å¼€çƒ‚èœçš„ç½‘ç«™http://www.pylife.net"
   Pop $Lbl_FinishPage
-  SetCtlColors $Lbl_FinishPage ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+  SetCtlColors $Lbl_FinishPage ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
-    ;°²×°
+    ;å®‰è£…
     ${NSD_CreateButton} 320 315 88 25 ""
 		Pop $Btn_Next
 		StrCpy $1 $Btn_Next
@@ -1006,7 +1006,7 @@ Function InstallationPage
 		GetFunctionAddress $3 OnClick_Check
 	  SkinBtn::onClick $1 $3
 
-    	;È¡Ïû
+    	;å–æ¶ˆ
 		${NSD_CreateButton} 417 315 88 25 ""
 		Pop $Btn_Cancel
 		StrCpy $1 $Btn_Cancel
@@ -1014,7 +1014,7 @@ Function InstallationPage
 		GetFunctionAddress $3 onCancel
 	  SkinBtn::onClick $1 $3
 
-    ;¹Ø±Õ°´Å¥
+    ;å…³é—­æŒ‰é’®
   ${NSD_CreateButton} 490 8 15 15 ""
 	Pop $Btn_Close
 	StrCpy $1 $Btn_Close
@@ -1022,19 +1022,19 @@ Function InstallationPage
   GetFunctionAddress $3 onCancel
   SkinBtn::onClick $1 $3
 
-  ;Ìù±³¾°´óÍ¼
+  ;è´´èƒŒæ™¯å¤§å›¾
 	${NSD_CreateBitmap} 0 0 100% 100% ""
   	Pop $BGImage
   ${NSD_SetImage} $BGImage $PLUGINSDIR\select.bmp $ImageHandle
 
 
 	GetFunctionAddress $0 onGUICallback
-	WndProc::onCallback $BGImage $0 ;´¦ÀíÎŞ±ß¿ò´°ÌåÒÆ¶¯
+	WndProc::onCallback $BGImage $0 ;å¤„ç†æ— è¾¹æ¡†çª—ä½“ç§»åŠ¨
 	nsDialogs::Show
 	${NSD_FreeImage} $ImageHandle
 FunctionEnd
 
-;°²×°½ø¶ÈÒ³Ãæ
+;å®‰è£…è¿›åº¦é¡µé¢
 Function LoadingPage
   GetDlgItem $0 $HWNDPARENT 1
   ShowWindow $0 ${SW_HIDE}
@@ -1048,26 +1048,26 @@ Function LoadingPage
 	${If} $0 == error
 		Abort
 	${EndIf}
-	SetCtlColors $0 ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+	SetCtlColors $0 ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
-	${NSW_SetWindowSize} $HWNDPARENT 520 350 ;¸Ä±ä×Ô¶¨Òå´°Ìå´óĞ¡
-	${NSW_SetWindowSize} $0 520 350 ;¸Ä±ä×Ô¶¨ÒåPage´óĞ¡
+	${NSW_SetWindowSize} $HWNDPARENT 520 350 ;æ”¹å˜è‡ªå®šä¹‰çª—ä½“å¤§å°
+	${NSW_SetWindowSize} $0 520 350 ;æ”¹å˜è‡ªå®šä¹‰Pageå¤§å°
 
-    ;DetailsÊä³öÎÄ±¾¿ò
-    StrCpy $UDetailsPrint "¿ªÊ¼Ö´ĞĞ°²×°$\r$\nhttp://www.eastmoney.com$\r$\n"
+    ;Detailsè¾“å‡ºæ–‡æœ¬æ¡†
+    StrCpy $UDetailsPrint "å¼€å§‹æ‰§è¡Œå®‰è£…$\r$\nhttp://www.eastmoney.com$\r$\n"
     nsDialogs::CreateControl EDIT "${__NSD_Text_STYLE}|${WS_VSCROLL}|${ES_MULTILINE}|${ES_WANTRETURN}" "${__NSD_Text_EXSTYLE}" 10 44 500 200 $UDetailsPrint
     Pop $Txt_DetailsPrint
     ShowWindow $Txt_DetailsPrint ${SW_HIDE}
     StrCpy $Bool_DetailsPrint 0
 
 
-    ;´´½¨¼òÒªËµÃ÷
-    ${NSD_CreateLabel} 24 243 300 20 "ÕıÔÚ°²×°"
+    ;åˆ›å»ºç®€è¦è¯´æ˜
+    ${NSD_CreateLabel} 24 243 300 20 "æ­£åœ¨å®‰è£…"
     Pop $Lbl_Sumary
-    SetCtlColors $Lbl_Sumary ""  0xffffff ;±³¾°Éè³ÉÍ¸Ã÷
+    SetCtlColors $Lbl_Sumary ""  0xffffff ;èƒŒæ™¯è®¾æˆé€æ˜
     ShowWindow $Lbl_Sumary ${SW_HIDE}
 
-        ;´´½¨¼òÒªËµÃ÷
+        ;åˆ›å»ºç®€è¦è¯´æ˜
     ${NSD_CreateLabel} 490 243 30 20 "0%"
     Pop $PPercent
     SetCtlColors $PPercent ""  0xffffff
@@ -1081,7 +1081,7 @@ Function LoadingPage
     GetFunctionAddress $0 NSD_TimerFun
     nsDialogs::CreateTimer $0 1
 
-    ;ÏÂÒ»²½
+    ;ä¸‹ä¸€æ­¥
     ${NSD_CreateButton} 320 315 88 25 ""
     Pop $Btn_Next
     StrCpy $1 $Btn_Next
@@ -1090,7 +1090,7 @@ Function LoadingPage
     SkinBtn::onClick $1 $3
     ShowWindow $Btn_Next ${SW_HIDE}
 
-    ;°²×°
+    ;å®‰è£…
     ${NSD_CreateButton} 320 315 88 25 ""
 		Pop $Btn_Install
 		StrCpy $1 $Btn_Install
@@ -1098,7 +1098,7 @@ Function LoadingPage
 		GetFunctionAddress $3 OnClick_Install
     SkinBtn::onClick $1 $3
 
-    	;È¡Ïû
+    	;å–æ¶ˆ
 		${NSD_CreateButton} 417 315 88 25 ""
 		Pop $Btn_Cancel
 		StrCpy $1 $Btn_Cancel
@@ -1107,7 +1107,7 @@ Function LoadingPage
 	  SkinBtn::onClick $1 $3
 		  ;EnableWindow $Btn_Cancel 1
 
-    ;¹Ø±Õ°´Å¥
+    ;å…³é—­æŒ‰é’®
 	  ${NSD_CreateButton} 490 8 15 15 ""
 		Pop $Btn_Close
 		StrCpy $1 $Btn_Close
@@ -1125,13 +1125,13 @@ Function LoadingPage
     StrCpy $WebImg $R0
     WebCtrl::ShowWebInCtrl $WebImg "$PLUGINSDIR/index.htm"
 
-    ;Ìù±³¾°´óÍ¼
+    ;è´´èƒŒæ™¯å¤§å›¾
     ${NSD_CreateBitmap} 0 0 100% 100% ""
     Pop $BGImage
     ${NSD_SetImage} $BGImage $PLUGINSDIR\installation.bmp $ImageHandle
 
     GetFunctionAddress $0 onGUICallback
-    WndProc::onCallback $BGImage $0 ;´¦ÀíÎŞ±ß¿ò´°ÌåÒÆ¶¯
+    WndProc::onCallback $BGImage $0 ;å¤„ç†æ— è¾¹æ¡†çª—ä½“ç§»åŠ¨
     nsDialogs::Show
     ${NSD_FreeImage} $ImageHandle
 FunctionEnd
@@ -1149,10 +1149,10 @@ Function CompletePage
 	${If} $0 == error
 		Abort
 	${EndIf}
-	SetCtlColors $0 ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+	SetCtlColors $0 ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
-    ${NSW_SetWindowSize} $HWNDPARENT 520 350 ;¸Ä±ä×Ô¶¨Òå´°Ìå´óĞ¡
-	${NSW_SetWindowSize} $0 520 350 ;¸Ä±ä×Ô¶¨ÒåPage´óĞ¡
+    ${NSW_SetWindowSize} $HWNDPARENT 520 350 ;æ”¹å˜è‡ªå®šä¹‰çª—ä½“å¤§å°
+	${NSW_SetWindowSize} $0 520 350 ;æ”¹å˜è‡ªå®šä¹‰Pageå¤§å°
 
 	${NSD_CreateButton} 255 163 15 15 ""
 	Pop $Ck_Weibo
@@ -1161,11 +1161,11 @@ Function CompletePage
 	GetFunctionAddress $3 OnClick_CheckWeibo
     SkinBtn::onClick $1 $3
 	StrCpy $Bool_Weibo 1
-    ${NSD_CreateLabel} 273 163 300 15 "Ç×£¬·ÛÒ»ÏÂßÂ,http://weibo.com/pylife"
+    ${NSD_CreateLabel} 273 163 300 15 "äº²ï¼Œç²‰ä¸€ä¸‹å‘—,http://weibo.com/pylife"
     Pop $Lbl_Weibo
-    SetCtlColors $Lbl_Weibo "" transparent ;±³¾°Éè³ÉÍ¸Ã÷
+    SetCtlColors $Lbl_Weibo "" transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
-	;¹Ø±Õ°´Å¥
+	;å…³é—­æŒ‰é’®
   ${NSD_CreateButton} 495 10 15 15 ""
 	Pop $Btn_Close
 	StrCpy $1 $Btn_Close
@@ -1173,7 +1173,7 @@ Function CompletePage
   GetFunctionAddress $3 onClickComplete
   SkinBtn::onClick $1 $3
 
-  ;Íê³É
+  ;å®Œæˆ
   ${NSD_CreateButton} 417 303 88 25 ""
 	Pop $Btn_Complete
 	StrCpy $1 $Btn_Complete
@@ -1181,13 +1181,13 @@ Function CompletePage
     GetFunctionAddress $2 onClickComplete
   SkinBtn::onClick $1 $2
 
-	;Ìù±³¾°´óÍ¼
+	;è´´èƒŒæ™¯å¤§å›¾
 	${NSD_CreateBitmap} 0 0 100% 100% ""
   	Pop $BGImage
     ${NSD_SetImage} $BGImage $PLUGINSDIR\success.bmp $ImageHandle
 
 	GetFunctionAddress $0 onGUICallback
-    WndProc::onCallback $BGImage $0 ;´¦ÀíÎŞ±ß¿ò´°ÌåÒÆ¶¯
+    WndProc::onCallback $BGImage $0 ;å¤„ç†æ— è¾¹æ¡†çª—ä½“ç§»åŠ¨
     nsDialogs::Show
     ${NSD_FreeImage} $ImageHandle
 FunctionEnd

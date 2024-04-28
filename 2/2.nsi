@@ -10,27 +10,27 @@ Var Btn_Agreement
 Var Bool_License
 Var Txt_License
 
-;---------------------------È«¾Ö±àÒë½Å±¾Ô¤¶¨ÒåµÄ³£Á¿-----------------------------------------------------
+;---------------------------å…¨å±€ç¼–è¯‘è„šæœ¬é¢„å®šä¹‰çš„å¸¸é‡-----------------------------------------------------
 !define  EM_BrandingText "testtest"
-; MUI Ô¤¶¨Òå³£Á¿
+; MUI é¢„å®šä¹‰å¸¸é‡
 !define MUI_ABORTWARNING
-;°²×°Í¼±êµÄÂ·¾¶Ãû×Ö
+;å®‰è£…å›¾æ ‡çš„è·¯å¾„åå­—
 !define MUI_ICON "images\fav.ico"
-;Ğ¶ÔØÍ¼±êµÄÂ·¾¶Ãû×Ö
+;å¸è½½å›¾æ ‡çš„è·¯å¾„åå­—
 !define MUI_UNICON "images\fav.ico"
-;²úÆ·Ğ­ÒéÊéµÄÂ·¾¶Ãû×Ö
+;äº§å“åè®®ä¹¦çš„è·¯å¾„åå­—
 ;!define MUI_PAGE_LICENSE_RTY "license\license.rtf"
 !define EM_OUTFILE_NAME "test.exe"
 
-;---------------------------ÉèÖÃÈí¼şÑ¹ËõÀàĞÍ£¨Ò²¿ÉÒÔÍ¨¹ıÍâÃæ±àÒë½Å±¾¿ØÖÆ£©------------------------------------
+;---------------------------è®¾ç½®è½¯ä»¶å‹ç¼©ç±»å‹ï¼ˆä¹Ÿå¯ä»¥é€šè¿‡å¤–é¢ç¼–è¯‘è„šæœ¬æ§åˆ¶ï¼‰------------------------------------
 SetCompressor lzma
 BrandingText "${EM_BrandingText}"
 SetCompress force
 XPStyle on
-; ------ MUI ÏÖ´ú½çÃæ¶¨Òå (1.67 °æ±¾ÒÔÉÏ¼æÈİ) ------
+; ------ MUI ç°ä»£ç•Œé¢å®šä¹‰ (1.67 ç‰ˆæœ¬ä»¥ä¸Šå…¼å®¹) ------
 !include "MUI2.nsh"
 !include "WinCore.nsh"
-;ÒıÓÃÎÄ¼şº¯ÊıÍ·ÎÄ¼ş
+;å¼•ç”¨æ–‡ä»¶å‡½æ•°å¤´æ–‡ä»¶
 !include "FileFunc.nsh"
 !include "nsWindows.nsh"
 !include "LoadRTF.nsh"
@@ -38,27 +38,27 @@ XPStyle on
 
 !define MUI_CUSTOMFUNCTION_GUIINIT onGUIInit
 
-;×Ô¶¨ÒåÒ³Ãæ
+;è‡ªå®šä¹‰é¡µé¢
 Page custom WelcomePage
 
-; Ğí¿ÉĞ­ÒéÒ³Ãæ
+; è®¸å¯åè®®é¡µé¢
 !define MUI_LICENSEPAGE_CHECKBOX
 
-; °²×°Ä¿Â¼Ñ¡ÔñÒ³Ãæ
+; å®‰è£…ç›®å½•é€‰æ‹©é¡µé¢
 !insertmacro MUI_PAGE_DIRECTORY
-; °²×°¹ı³ÌÒ³Ãæ
+; å®‰è£…è¿‡ç¨‹é¡µé¢
 !insertmacro MUI_PAGE_INSTFILES
-; °²×°Íê³ÉÒ³Ãæ
+; å®‰è£…å®Œæˆé¡µé¢
 !insertmacro MUI_PAGE_FINISH
-; °²×°Ğ¶ÔØ¹ı³ÌÒ³Ãæ
+; å®‰è£…å¸è½½è¿‡ç¨‹é¡µé¢
 !insertmacro MUI_UNPAGE_INSTFILES
-; °²×°½çÃæ°üº¬µÄÓïÑÔÉèÖÃ
+; å®‰è£…ç•Œé¢åŒ…å«çš„è¯­è¨€è®¾ç½®
 !insertmacro MUI_LANGUAGE "SimpChinese"
 
-;------------------------------------------------------MUI ÏÖ´ú½çÃæ¶¨ÒåÒÔ¼°º¯Êı½áÊø------------------------
-;Ó¦ÓÃ³ÌĞòÏÔÊ¾Ãû×Ö
+;------------------------------------------------------MUI ç°ä»£ç•Œé¢å®šä¹‰ä»¥åŠå‡½æ•°ç»“æŸ------------------------
+;åº”ç”¨ç¨‹åºæ˜¾ç¤ºåå­—
 Name "test"
-;Ó¦ÓÃ³ÌĞòÊä³öÂ·¾¶
+;åº”ç”¨ç¨‹åºè¾“å‡ºè·¯å¾„
 OutFile "${EM_OUTFILE_NAME}"
 InstallDir "$PROGRAMFILES\test"
 
@@ -77,9 +77,9 @@ Function .onInit
 FunctionEnd
 
 Function onGUIInit
-    ;Ïû³ı±ß¿ò
+    ;æ¶ˆé™¤è¾¹æ¡†
     System::Call `user32::SetWindowLong(i$HWNDPARENT,i${GWL_STYLE},0x9480084C)i.R0`
-    ;Òş²ØÒ»Ğ©¼ÈÓĞ¿Ø¼ş
+    ;éšè—ä¸€äº›æ—¢æœ‰æ§ä»¶
     GetDlgItem $0 $HWNDPARENT 1034
     ShowWindow $0 ${SW_HIDE}
     GetDlgItem $0 $HWNDPARENT 1035
@@ -98,20 +98,20 @@ Function onGUIInit
     ShowWindow $0 ${SW_HIDE}
 FunctionEnd
 
-;´¦ÀíÎŞ±ß¿òÒÆ¶¯
+;å¤„ç†æ— è¾¹æ¡†ç§»åŠ¨
 Function onGUICallback
   ${If} $MSG = ${WM_LBUTTONDOWN}
     SendMessage $HWNDPARENT ${WM_NCLBUTTONDOWN} ${HTCAPTION} $0
   ${EndIf}
 FunctionEnd
 
-;ÏÂÒ»²½°´Å¥ÊÂ¼ş
+;ä¸‹ä¸€æ­¥æŒ‰é’®äº‹ä»¶
 Function onClickNext
-  MessageBox MB_OK "ÏÂÒ»²½"
+  MessageBox MB_OK "ä¸‹ä¸€æ­¥"
   Abort
 FunctionEnd
 
-;Ğ­Òé°´Å¥ÊÂ¼ş
+;åè®®æŒ‰é’®äº‹ä»¶
 Function onClickAgreement
 	${IF} $Bool_License == 1
 		ShowWindow $Txt_License ${SW_HIDE}
@@ -128,7 +128,7 @@ Function onClickAgreement
 	${EndIf}
 FunctionEnd
 
-;-----------------------------------------Æ¤·ôÌùÍ¼·½·¨----------------------------------------------------
+;-----------------------------------------çš®è‚¤è´´å›¾æ–¹æ³•----------------------------------------------------
 Function SkinBtn_Next
   SkinBtn::Set /IMGID=$PLUGINSDIR\btn_next.bmp $1
 FunctionEnd
@@ -156,12 +156,12 @@ Function WelcomePage
     ${If} $0 == error
         Abort
     ${EndIf}
-    SetCtlColors $0 ""  transparent ;±³¾°Éè³ÉÍ¸Ã÷
+    SetCtlColors $0 ""  transparent ;èƒŒæ™¯è®¾æˆé€æ˜
 
-    ${NSW_SetWindowSize} $HWNDPARENT 513 354 ;¸Ä±ä´°Ìå´óĞ¡
-    ${NSW_SetWindowSize} $0 513 354 ;¸Ä±äPage´óĞ¡
+    ${NSW_SetWindowSize} $HWNDPARENT 513 354 ;æ”¹å˜çª—ä½“å¤§å°
+    ${NSW_SetWindowSize} $0 513 354 ;æ”¹å˜Pageå¤§å°
     
-    ;¶ÁÈ¡RTFµÄÎÄ±¾¿ò
+    ;è¯»å–RTFçš„æ–‡æœ¬æ¡†
 		nsDialogs::CreateControl "RichEdit20A" \
     ${ES_READONLY}|${WS_VISIBLE}|${WS_CHILD}|${WS_TABSTOP}|${WS_VSCROLL}|${ES_MULTILINE}|${ES_WANTRETURN} \
 		${WS_EX_STATICEDGE}  5 35 501 216 ''
@@ -170,7 +170,7 @@ Function WelcomePage
     ShowWindow $Txt_License ${SW_HIDE}
 
     
-    ;ÏÂÒ»²½
+    ;ä¸‹ä¸€æ­¥
     ${NSD_CreateButton} 330 315 88 25 ""
 		Pop $Btn_Next
 		StrCpy $1 $Btn_Next
@@ -178,28 +178,28 @@ Function WelcomePage
 		GetFunctionAddress $3 onClickNext
     SkinBtn::onClick $1 $3
     
-    ;ÓÃ»§Ğ­Òé
+    ;ç”¨æˆ·åè®®
 		${NSD_CreateButton} 181 273 95 15 ""
 		Pop $Btn_Agreement
 		StrCpy $1 $Btn_Agreement
 		Call SkinBtn_Agreement1
 	  GetFunctionAddress $3 onClickAgreement
 	  SkinBtn::onClick $1 $3
- 		StrCpy $Bool_License 0 ;³õÊ¼»¯ÖµÎª0
+ 		StrCpy $Bool_License 0 ;åˆå§‹åŒ–å€¼ä¸º0
 
-    ;ÌùĞ¡Í¼
+    ;è´´å°å›¾
     ${NSD_CreateBitmap} 1 31 511 226 ""
     Pop $MiddleImage
     ${NSD_SetImage} $MiddleImage $PLUGINSDIR\welcome.bmp $ImageHandle
     ;ShowWindow $MiddleImage ${SW_HIDE}
     
-    ;Ìù±³¾°´óÍ¼
+    ;è´´èƒŒæ™¯å¤§å›¾
     ${NSD_CreateBitmap} 0 0 100% 100% ""
     Pop $BGImage
     ${NSD_SetImage} $BGImage $PLUGINSDIR\bg.bmp $ImageHandle
 
 	GetFunctionAddress $0 onGUICallback
-	WndProc::onCallback $BGImage $0 ;´¦ÀíÎŞ±ß¿ò´°ÌåÒÆ¶¯
+	WndProc::onCallback $BGImage $0 ;å¤„ç†æ— è¾¹æ¡†çª—ä½“ç§»åŠ¨
 	nsDialogs::Show
 	${NSD_FreeImage} $ImageHandle
 FunctionEnd
